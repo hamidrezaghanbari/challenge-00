@@ -1,16 +1,78 @@
-html,
-body {
+@font-face {
+  font-family: CommissionerThin;
+  src: url('/fonts/Commissioner-Thin.ttf');
+}
+
+@font-face {
+  font-family: CommissionerLight;
+  src: url('/fonts/Commissioner-Light.ttf');
+}
+
+@font-face {
+  font-family: CommissionerRegular;
+  src: url('/fonts/Commissioner-Regular.ttf');
+}
+
+@font-face {
+  font-family: CommissionerBold;
+  src: url('/fonts/Commissioner-Bold.ttf');
+}
+
+*, *::before, *::after {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
   box-sizing: border-box;
+}
+
+body {
+  font-family: CommissionerLight;
+}
+
+/* global classes for use for reduce reduduncy  */
+
+.card {
+  margin-top: 30px;
+  background-color: white;
+  width: 90vw;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  max-width: 700px;
+}
+
+.modal-back {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+
+  /* padding top set position of modal in screen  */
+  padding-top: 200px;
+}
+
+.modal {
+  z-index: 2;
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  border: 1px solid #888;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  animation-name: animateTop;
+  animation-duration: 0.4s;
+}
+
+@keyframes animateTop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
 }
